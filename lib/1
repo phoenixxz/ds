@@ -1,0 +1,13 @@
+/bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I../include     -g -O2 -MT sq_list.lo -MD -MP -MF .deps/sq_list.Tpo -c -o sq_list.lo sq_list.c
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I../include -g -O2 -MT sq_list.lo -MD -MP -MF .deps/sq_list.Tpo -c sq_list.c  -fPIC -DPIC -o .libs/sq_list.o
+ gcc -DHAVE_CONFIG_H -I../include -g -O2 -MT sq_list.lo -MD -MP -MF .deps/sq_list.Tpo -c sq_list.c -o sq_list.o >/dev/null 2>&1
+mv -f .deps/sq_list.Tpo .deps/sq_list.Plo
+/bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2   -o libsq_list.la -rpath /usr/local/lib sq_list.lo  
+gcc -shared  .libs/sq_list.o   -Wl,-soname -Wl,libsq_list.so.0 -o .libs/libsq_list.so.0.0.0
+(cd .libs && rm -f libsq_list.so.0 && ln -s libsq_list.so.0.0.0 libsq_list.so.0)
+(cd .libs && rm -f libsq_list.so && ln -s libsq_list.so.0.0.0 libsq_list.so)
+ar cru .libs/libsq_list.a  sq_list.o
+ranlib .libs/libsq_list.a
+creating libsq_list.la
+(cd .libs && rm -f libsq_list.la && ln -s ../libsq_list.la libsq_list.la)
