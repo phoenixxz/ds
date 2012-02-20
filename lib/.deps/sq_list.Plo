@@ -1,3 +1,0 @@
-sq_list.lo sq_list.o: sq_list.c ../include/sq_list.h
-
-../include/sq_list.h:
